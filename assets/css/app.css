@@ -4,11 +4,13 @@
   --pink1: #e08fb8;
   --pink2: #ff70a6;
   --gray: #70757a;
+--shadow1: 0px 0px 5px 10px rgba(0, 0, 0, .1);
+
 }
 
 @font-face {
   font-family: IRANSansXfa;
-  src: url(../fonts/IranSansX/Webfonts/fonts/woff2/IRANSansX-Regular.woff2);
+  src: url(../fonts/IranSansX/Farsi-numerals/IRANSansXFaNum-Regular.ttf);
 }
 
 /*
@@ -95,6 +97,9 @@ hr {
 svg {
   fill: var(--cyan);
 }
+
+
+
 /* reset default text opacity of input placeholder */
 ::-moz-placeholder {
   color: unset;
@@ -173,20 +178,7 @@ button {
   transition: all 0.4s ease-in-out;
 }
 
-.consultants::after,
-.blog-page::after,
-.cityCourses::after,
-#indexServicesSwiper::after,
-.province-list .loader-container .loader,
-.province-list .loader-container,
-.brand-logo::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-}
+
 
 .province-list a img,
 .comment-item img,
@@ -220,6 +212,7 @@ body {
   font-family: "IRANSansXfa";
   font-size: 14px;
   overflow-x: hidden;
+  color: var(--gray);
 }
 
 *:where(p, span) {
@@ -244,6 +237,9 @@ address {
   color: var(--cyan);
 }
 
+.pink1 {
+color: var(--pink1)!important;
+}
 .full-pink {
   color: #ff70a6 !important;
 }
@@ -323,6 +319,10 @@ footer .footer-content .permissions img {
   border-radius: 10px;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   max-height: 80px;
+}
+footer .copy-right {
+background-color: var(--pink1);
+color: #fff;
 }
 footer .copy-right > div {
   text-align: center;
@@ -489,7 +489,7 @@ footer .copy-right > div {
   border-radius: 5px;
   display: inline-block;
   align-items: center;
-  background-color: white;
+  background-color: #fff;
   border: 2px solid var(--cyan);
   color: var(--cyan);
 }
@@ -504,7 +504,16 @@ footer .copy-right > div {
 }
 .but-primary:hover {
   filter: brightness(0.9);
-  color: white;
+  color: #fff;
+}
+.but-secondary {
+  background-color: var(--pink1);
+  color: #fff;
+  filter: brightness(1);
+}
+.but-secondary:hover {
+  filter: brightness(0.9);
+  color: #fff;
 }
 .but svg,
 .but img {
@@ -902,7 +911,14 @@ footer .copy-right > div {
   background: url(../images/wedding-3.png) no-repeat;
   background-size: cover;
 }
+.jvectormap-region  {
+fill:var(--cyan) ;
+}
 
+
+.map circle {
+  filter: drop-shadow(2px 3px 6px rgba(0,0,0,.1));
+}
 .map-container {
   flex: 1 1 auto !important;
   width: 100%;
@@ -1077,6 +1093,12 @@ footer .copy-right > div {
   opacity: 1;
   z-index: 10;
 }
+
+.center-tab-list-item {
+  border: 1px solid rgba(0,0,0,.1);
+  padding: 10px;
+  border-radius: 5px;
+}
 .province-list.mobile {
   top: 0;
   left: 0;
@@ -1153,8 +1175,10 @@ footer .copy-right > div {
   flex-direction: row-reverse;
 }
 .rating-star {
-  fill: gold;
   width: 20px;
+}
+.rating-star svg{
+  fill: gold;
 }
 #indexServicesSwiper::after {
   height: 3px;
@@ -1216,7 +1240,7 @@ footer .copy-right > div {
   fill: var(--cyan);
   padding: 0;
   border: 2px solid var(--cyan) !important;
-  background-color: white;
+  background-color: #fff;
   position: absolute;
   width: unset;
   top: 5px;
@@ -1537,9 +1561,12 @@ footer .copy-right > div {
   pointer-events: none;
 }
 
+
+
+
 .services .tab-items .swiper-slide-thumb-active button {
   background-color: var(--cyan);
-  color: white;
+  color: #fff;
 }
 
 .services-locations li:not(:last-child) {
