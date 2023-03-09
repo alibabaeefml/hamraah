@@ -1102,7 +1102,7 @@ fill:var(--cyan) ;
 }
 
 .center-tab-list-item {
-  border: 1px solid rgba(0,0,0,.1);
+  border: 1px solid var(--cyan);
   padding: 10px;
   border-radius: 5px;
 }

@@ -1632,6 +1632,32 @@
           name: "خراسان جنوبی",
         },
       };
+      const map_province_data_stage = [
+        {
+          id: 1,
+          color: "#99d7d7",
+          name: "few",
+          condition: (num) => num < 10,
+        },
+        {
+          id: 2,
+          color: "#66c0c0",
+          name: "medium",
+          condition: (num) => num > 10 && num < 31,
+        },
+        {
+          id: 3,
+          color: "#3cc7c7",
+          name: "many",
+          condition: (num) => num > 30 && num < 51,
+        },
+        {
+          id: 4,
+          color: "#02d6d7",
+          name: "enormous",
+          condition: (num) => num > 50,
+        },
+      ];
 
       function append_map_statistics(path, statistic_data, data_code, style = {}) {
         let bbox = path.getBBox();
@@ -1692,44 +1718,20 @@
             if (item == data_code) {
               const statistic_data = provinces_statistics[iran_map_data[item].province_id];
               append_map_statistics(path, statistic_data, data_code);
-              // relative map color 
+              // to set the color of each map province as in 4 stages based on the quantity of its centers
+              map_province_data_stage.map((s) => {
+              if (s.condition(statistic_data)) {
+               
+              $(`.jvectormap-element [data-code="${data_code}"]`).css("fill",s.color);
+              }
+              });
+
               return;
             }
           }
         });
         counter();
       });
-    </script>
-    
-    <script>
-      let map_stage_colors = {
-        {
-          id: 1,
-          color: "#99d7d7",
-          name: "few",
-          condition: (num) => num < 10,
-        },
-        
-        {
-          id: 2,
-          color: "#66c0c0",
-          name: "medium",
-          condition: (num) => num > 10 && num < 31,
-        },
-        {
-          id: 3,
-          color: "#3cc7c7",
-          name: "many",
-          condition: (num) => num > 30 && num < 51,
-        },
-        {
-          id: 4,
-          color: "#02d6d7",
-          name: "enormous",
-          condition: (num) => num > 50,
-        },
-      };
-      $(() => {});
     </script>
   </body>
 </html>
