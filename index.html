@@ -96,10 +96,10 @@
                     طراحان رایانه ای علی الخصوص طراحان خلاقی، و فرهنگ پیشرو در زبان فارسی ایجاد کرد، در این صورت می توان امید داشت که تمام و دشواری
                     موجود در ارائه راهکارها، و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی، و جوابگوی سوالات
                   </p>
-                  <div class="ms-auto">
+                  <!-- <div class="ms-auto">
                     <a href="" class="but">مراکز مشاوره</a>
                     <a href="" class="but but-primary">دوره های آموزشی</a>
-                  </div>
+                  </div> -->
                 </article>
               </div>
             </div>
@@ -118,10 +118,10 @@
                     طراحان رایانه ای علی الخصوص طراحان خلاقی، و فرهنگ پیشرو در زبان فارسی ایجاد کرد، در این صورت می توان امید داشت که تمام و دشواری
                     موجود در ارائه راهکارها، و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی، و جوابگوی سوالات
                   </p>
-                  <div class="ms-auto">
+                  <!-- <div class="ms-auto">
                     <a href="" class="but">مراکز مشاوره</a>
                     <a href="" class="but but-primary">دوره های آموزشی</a>
-                  </div>
+                  </div> -->
                 </article>
               </div>
             </div>
@@ -961,7 +961,7 @@
             <div class="col-md-6 col-lg-4 d-flex flex-row" data-aos="fade-down" data-aos-delay="100">
               <div class="brand-logo px-3">
                 <div class="logo-container">
-                  <img class="w-100 h-100 object-fit-cover" src="assets/images/logo.png" alt="">
+                  <img class="w-100 h-100 object-fit-cover" src="assets/images/logo.png" alt="" />
                 </div>
 
                 <h1>همراه</h1>
@@ -1280,7 +1280,7 @@
         },
       });
     </script>
-
+    <!-- set map data -->
     <script>
       const map_centers = [
         {
@@ -1645,7 +1645,6 @@
 
         background_circle.setAttribute("cy", y);
         background_circle.setAttribute("r", style.size || 8);
-
         background_circle.setAttribute("data-code", data_code);
         background_circle.style.pointerEvents = "none";
         background_circle.style.userSelect = "none";
@@ -1672,7 +1671,7 @@
         data_number.style.userSelect = "none";
         data_number.style.pointerEvents = "none";
         data_number.style.fill = "var(--pink2)";
-        data_number.style.fontSize = style.size * 1.25 || "10" ;
+        data_number.style.fontSize = style.size * 1.25 || "10";
 
         // Give it a class that will determine the text size, colour, etc
         data_number.classList.add("map-statistic");
@@ -1693,6 +1692,7 @@
             if (item == data_code) {
               const statistic_data = provinces_statistics[iran_map_data[item].province_id];
               append_map_statistics(path, statistic_data, data_code);
+              // relative map color 
               return;
             }
           }
@@ -1700,6 +1700,36 @@
         counter();
       });
     </script>
+    
+    <script>
+      let map_stage_colors = {
+        {
+          id: 1,
+          color: "#99d7d7",
+          name: "few",
+          condition: (num) => num < 10,
+        },
+        
+        {
+          id: 2,
+          color: "#66c0c0",
+          name: "medium",
+          condition: (num) => num > 10 && num < 31,
+        },
+        {
+          id: 3,
+          color: "#3cc7c7",
+          name: "many",
+          condition: (num) => num > 30 && num < 51,
+        },
+        {
+          id: 4,
+          color: "#02d6d7",
+          name: "enormous",
+          condition: (num) => num > 50,
+        },
+      };
+      $(() => {});
+    </script>
   </body>
-  
-  </html>
+</html>

@@ -77,7 +77,7 @@ textarea {
   white-space: revert;
 }
 textarea:focus {
-  box-shadow: rgba(160, 0, 253, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+  box-shadow: var(--pink1) 0px 9px 22px -8px;
 }
 
 /* minimum style to allow to style meter element */
@@ -230,7 +230,7 @@ address {
 }
 
 .bg-pink {
-  background-color: #fae4ff;
+  background-color: #FBE4FF;
 }
 
 .cyan {
@@ -389,6 +389,8 @@ footer .copy-right > div {
   position: relative;
   flex-shrink: 0;
   color: var(--gray);
+  margin-top: -35px;
+  pointer-events: none;
 }
 
 .logo-container {
@@ -915,21 +917,24 @@ footer .copy-right > div {
 fill:var(--cyan) ;
 }
 
-
 .map circle {
   filter: drop-shadow(2px 3px 6px rgba(0,0,0,.1));
 }
+
 .map-container {
   flex: 1 1 auto !important;
   width: 100%;
 }
+
 .map-container #iran_map {
   height: 400px;
 }
+
 #iran_map svg {
   height: inherit;
   filter: drop-shadow(-18px 20px 0px rgb(235, 235, 235));
 }
+
 @media screen and (min-width: 768px) {
   .map-container #iran_map {
     height: 600px;
@@ -999,6 +1004,8 @@ fill:var(--cyan) ;
 }
 .intro article {
   content: "";
+  width: 460px;
+  box-shadow:0px 0px 24px 13px rgb(0 0 0 / 5%) ;
   position: absolute;
   top: auto;
   right: 0;
