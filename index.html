@@ -818,7 +818,7 @@
                   <p class="fs-12">تخصص : روانشاناس بالینی</p>
                   <p class="fs-12">شماره نظام روانشناسی : ۳۵۲۶</p>
                 </div>
-                <button class="but but-primary ms-auto mt-auto fw-normal px-3 fs-12">معرفی مشاور</button>
+                <button class="but but-secondary ms-auto mt-auto fw-normal px-3 fs-12">معرفی مشاور</button>
               </div>
             </li>
             <li class="swiper-slide">
@@ -843,7 +843,7 @@
 
                   <p class="fs-12">شماره نظام روانشناسی : ۳۵۲۶</p>
                 </div>
-                <button class="but but-primary ms-auto mt-auto fw-normal px-3 fs-12">معرفی مشاور</button>
+                <button class="but but-secondary ms-auto mt-auto fw-normal px-3 fs-12">معرفی مشاور</button>
               </div>
             </li>
             <li class="swiper-slide">
@@ -868,7 +868,7 @@
 
                   <p class="fs-12">شماره نظام روانشناسی : ۳۵۲۶</p>
                 </div>
-                <button class="but but-primary ms-auto mt-auto fw-normal px-3 fs-12">معرفی مشاور</button>
+                <button class="but but-secondary ms-auto mt-auto fw-normal px-3 fs-12">معرفی مشاور</button>
               </div>
             </li>
             <li class="swiper-slide">
@@ -893,7 +893,7 @@
 
                   <p class="fs-12">شماره نظام روانشناسی : ۳۵۲۶</p>
                 </div>
-                <button class="but but-primary ms-auto mt-auto fw-normal px-3 fs-12">معرفی مشاور</button>
+                <button class="but but-secondary ms-auto mt-auto fw-normal px-3 fs-12">معرفی مشاور</button>
               </div>
             </li>
             <li class="swiper-slide">
@@ -918,7 +918,7 @@
 
                   <p class="fs-12">شماره نظام روانشناسی : ۳۵۲۶</p>
                 </div>
-                <button class="but but-primary ms-auto mt-auto fw-normal px-3 fs-12">معرفی مشاور</button>
+                <button class="but but-secondary ms-auto mt-auto fw-normal px-3 fs-12">معرفی مشاور</button>
               </div>
             </li>
             <li class="swiper-slide">
@@ -943,7 +943,7 @@
 
                   <p class="fs-12">شماره نظام روانشناسی : ۳۵۲۶</p>
                 </div>
-                <button class="but but-primary ms-auto mt-auto fw-normal px-3 fs-12">معرفی مشاور</button>
+                <button class="but but-secondary ms-auto mt-auto fw-normal px-3 fs-12">معرفی مشاور</button>
               </div>
             </li>
           </ul>
@@ -1287,7 +1287,8 @@
           id: 1,
           name: "آذربایجان شرقی",
           centers: ["test"],
-          ngos: ["test", "test1"],
+          ngos: ["test", "test1","test", "test1","test",
+           "test1","test", "test1","test", "test1","test", "test1","test", "test1","test", "test1","test", "test1","test", "test1","test", "test1","test", "test1","test", "test1","test", "test1","test", "test1","test", "test1","test", "test1","test", "test1","test", "test1","test", "test1","test", "test1","test", "test1","test", "test1","test", "test1","test", "test1"],
         },
         {
           id: 2,
@@ -1721,8 +1722,9 @@
               // to set the color of each map province as in 4 stages based on the quantity of its centers
               map_province_data_stage.map((s) => {
               if (s.condition(statistic_data)) {
+              //  console.log($(`[data-code="${data_code}"]`))
                
-              $(`.jvectormap-element [data-code="${data_code}"]`).css("fill",s.color);
+              $(`.jvectormap-region[data-code="${data_code}"]`).css("fill",s.color);
               }
               });
 
