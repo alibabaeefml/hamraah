@@ -46,7 +46,11 @@ const isMobile = () => {
   if (/(tablet|ipad|playbook|silk)|(android(?!.*mobi))/i.test(ua)) {
     return true;
   }
-  if (/Mobile|iP(hone|od)|Android|BlackBerry|IEMobile|Kindle|Silk-Accelerated|(hpw|web)OS|Opera M(obi|ini)/.test(ua)) {
+  if (
+    /Mobile|iP(hone|od)|Android|BlackBerry|IEMobile|Kindle|Silk-Accelerated|(hpw|web)OS|Opera M(obi|ini)/.test(
+      ua
+    )
+  ) {
     return true;
   }
   return false;
@@ -57,7 +61,9 @@ const calc_rating = (rate_num = 5, rating_el) => {
   if ($(`${rating_el} svg`).length) return;
   if (rate_num > 5) rate_num = 5;
   if (typeof rating_el !== "string") {
-    throw new Error(`Type of argument: rating_el must be string. // like '#yourElement'`);
+    throw new Error(
+      `Type of argument: rating_el must be string. // like '#yourElement'`
+    );
   }
   rate_num = Math.abs(rate_num);
   let filled = `<span class="rating-star"
@@ -110,3 +116,15 @@ const counter = (current) => {
       });
 };
 
+// tabs
+
+$(() => {
+  $(".tab").click((e) => {
+    const data   = $(e.currentTarget).attr("data-tab");
+    const group = $(e.currentTarget).attr("tab-group");
+    $(`[${group}] .tab`).removeClass("active")
+    $(e.currentTarget).addClass("active")
+    $(`[${group}] .tab-view`).addClass("d-none");
+    $(`[${group}] .tab-view[data-tab="${data}"]`).removeClass("d-none");
+  });
+});

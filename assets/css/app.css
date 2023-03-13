@@ -123,6 +123,207 @@ p {
   text-align: right;
 }
 
+
+/* statistics section */
+.statistics-wrapper {
+  width: max-content;
+  margin-inline: auto;
+  display: flex;
+}
+
+
+
+.statistics {
+  height: 400px;
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  width: max-content;
+  margin-inline: auto;
+}
+
+
+.statistics .statistic-item {
+  background-color: #fff7fb;
+  width: 150px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  color: var(--gray);
+  padding: 20px;
+  border-radius: 15px;
+  scale: 1;
+  transition: .3s !important;
+}
+
+.statistics .statistic-item .statistic-name {
+  height: 100px;
+  overflow: hidden;
+}
+
+.statistics .statistic-item .icon {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.statistics .statistic-item:hover {
+  background-color: #f8e2ed;
+  scale: 1.3;
+}
+
+.statistics .statistic-item svg {
+  fill: var(--pink1);
+}
+
+.statistics div:has(.back-line) {
+  position: absolute;
+  top: 50%;
+  z-index: -1;
+  width: 115%;
+}
+
+.statistics .back-line {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.statistics .circle {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 9999px;
+  background-color: var(--cyan);
+}
+
+.line {
+  height: 2px;
+  width: 100%;
+  background-color: var(--cyan);
+}
+
+
+@media screen and (max-width:1024px) {
+  .statistics .statistic-item {
+    width: 75vw;
+  }
+}
+
+
+@media screen and (max-width:1430px) {
+  .statistics div:has(.back-line) {
+    width: 90%;
+  }
+
+  .statistics-wrapper {
+    max-width: 100%;
+    overflow: hidden;
+    overflow-x: auto;
+    justify-content: start;
+    padding: 50px;
+  }
+}
+
+/* services section */
+
+.services .right-side {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.services .right-side .services-img-container {
+  width: 400px;
+  height: 500px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.services img {
+  object-fit: cover;
+}
+
+.services .right-side .tabs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  gap: 15px;
+}
+
+.tab[data-tab=educational_course] {
+  margin-right: -100px;
+}
+
+.services .right-side .tab {
+  cursor: pointer;
+  padding: 0;
+  width: 250px;
+  height: 50px;
+  border-radius: 50px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, .1);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 3px transparent solid;
+  transition: .3s;
+}
+
+.services .right-side .tab.active {
+  border: 3px var(--cyan) solid;
+  font-weight: bold;
+}
+
+.services .right-side .tab.active .img-container {
+  border: 3px #fff solid;
+}
+
+.services .right-side .tab .name {
+  padding-right: 10px;
+}
+
+.services .right-side .tab .img-container {
+  width: 40%;
+  height: 100%;
+  border-radius: 9999px;
+  overflow: hidden;
+  transition: .3s;
+}
+
+.services .right-side .tabs img {
+  object-fit: cover;
+}
+
+
+.services .left-side .but {
+  width: max-content;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.tab-view {
+  animation: fade 1s;
+}
+
 /* fix the feature of 'hidden' attribute.
 display:revert; revert to element instead of attribute */
 :where([hidden]) {
@@ -243,7 +444,7 @@ address {
 }
 
 .bg-pink1 {
-   background-color: rgb(224, 143, 184 , .5);
+  background-color: rgb(224, 143, 184, .5);
 }
 
 .cyan {
@@ -522,7 +723,7 @@ footer a:hover {
   align-items: center;
 }
 
-.tab {
+.province-list .tab {
   font-size: 14px;
   font-weight: bold;
   color: var(--cyan);
@@ -535,9 +736,10 @@ footer a:hover {
   color: var(--cyan);
 }
 
-.tab.active {
+.province-list .tab.active {
   background-color: var(--cyan);
   color: #fff;
+
 }
 
 .but-primary {
@@ -1062,6 +1264,113 @@ footer a:hover {
   animation: spin 2s linear infinite;
 }
 
+/* Courses */
+[recent-courses] {
+  margin-block: 100px;
+  width: 100%;
+}
+
+[recent-courses] .course-item {
+  border-radius: 15px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  height: 200px;
+  user-select: none;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: 20px;
+  width: 100%;
+}
+
+[recent-courses]  a {
+  color: var(--cyan);
+}
+
+[recent-courses] .course-item .course-bg {
+  filter: grayscale(1);
+  opacity: .1;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  transition: .5s;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+}
+
+
+[recent-courses] .course-item .course-center {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+
+[recent-courses] .course-item:hover {
+  color: white;
+}
+
+
+
+[recent-courses] .course-item:hover .course-bg {
+  filter: grayscale(0);
+  opacity: 1;
+}
+
+[recent-courses] .course-item::after {
+  content: "";
+  background-color: transparent;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  opacity: .5;
+  transition: .3s;
+}
+
+[recent-courses] .course-item:hover::after {
+  background-color: var(--pink1);
+}
+
+
+@media screen and (min-width:640px) {
+  
+[recent-courses] .course-item-large {
+  width: 40%;
+}
+
+[recent-courses] .course-item-medium {
+  width: 30%;
+}
+
+[recent-courses] .course-item-small {
+  width: 20%;
+}
+}
+
+[recent-courses] .course-item .course-center-logo {
+  border: solid #fff 2px;
+  border-radius: 9999px;
+  overflow: hidden;
+  display: block;
+  width: 40px;
+  height: 40px;
+  background-color: #fff;
+}
+
+[recent-courses] .course-item .course-center-logo img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+
+
 /* Safari */
 @-webkit-keyframes spin {
   0% {
@@ -1181,38 +1490,7 @@ footer a:hover {
   }
 }
 
-.statistic>div {
-  transition: scale .3s !important;
-  scale: 1;
-}
 
-.statistic>div:hover {
-  scale: 1.3;
-}
-
-.statistic {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-  justify-content: center;
-  padding: 4rem 0;
-}
-
-.statistic-name {
-  color: var(--gray);
-}
-
-@media screen and (min-width: 576px) {
-  .statistic {
-    gap: 60px;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .statistic {
-    gap: 80px;
-  }
-}
 
 .province-list {
   display: block;
@@ -1339,9 +1617,11 @@ footer a:hover {
 .rating-star svg {
   fill: gold;
 }
-#indexServicesSwiper{
+
+#indexServicesSwiper {
   overflow: visible;
 }
+
 #indexServicesSwiper::after {
   height: 3px;
   background-color: rgba(216, 216, 216, 0.4);
@@ -1376,7 +1656,7 @@ footer a:hover {
 }
 
 #indexServicesSwiper .swiper-slide:hover {
-  
+
   scale: 1.2;
 }
 
@@ -1744,14 +2024,7 @@ footer a:hover {
 
 
 
-.services .tab-items .swiper-slide-thumb-active button {
-  background-color: var(--cyan);
-  color: #fff;
-}
 
-.services-locations li:not(:last-child) {
-  border-bottom: 1px solid #fae4ff;
-}
 
 aside .aside-card {
   padding: 15px;
